@@ -17,17 +17,16 @@ export const ourFileRouter = {
 
       return { user: self };
     })
-    .onUploadComplete(async ({ metadata, file }) => {
-      await db.stream.update({
-        where: {
-          userId: metadata.user.id,
-        },
-        data: {
-          thumbnailUrl: file.url,
-        },
-      });
-
-      return { fileUrl: file.url };
+    .onUploadComplete(() => {
+      // await db.stream.update({
+      //   where: {
+      //     userId: metadata.user.id,
+      //   },
+      //   data: {
+      //     thumbnailUrl: file.url,
+      //   },
+      // });
+      // return { fileUrl: file.url };
     }),
 } satisfies FileRouter;
 
