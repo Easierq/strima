@@ -1,9 +1,13 @@
+import { auth } from "@clerk/nextjs";
 import { createUploadthing, type FileRouter } from "uploadthing/next";
 
-import { db } from "@/lib/db";
-import { getSelf } from "@/lib/auth-service";
-
 const f = createUploadthing();
+
+const handleAuth = () => {
+  const { userId } = auth();
+  if (!userId) throw new Error("Unauthorized");
+  return { userId: userId };
+};
 
 export const ourFileRouter = {
   thumbnailUploader: f({
@@ -12,11 +16,7 @@ export const ourFileRouter = {
       maxFileCount: 1,
     },
   })
-    .middleware(async () => {
-      const self = await getSelf();
-
-      return { user: self };
-    })
+    .middleware(() => handleAuth())
     .onUploadComplete(() => {
       // await db.stream.update({
       //   where: {
