@@ -9,7 +9,7 @@ import { Toaster } from "sonner";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Twicher",
+  title: "Strima",
   description: "Online Streaming Platform",
 };
 
@@ -19,7 +19,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <ClerkProvider>
+    <ClerkProvider
+      appearance={{
+        variables: {
+          colorPrimary: "#6441A4",
+        },
+      }}
+    >
       <html lang="en">
         <body className={inter.className}>
           <ThemeProvider attribute="class" forcedTheme="dark">

@@ -16,7 +16,7 @@ export const Logo = () => {
           <Image src="/twitch.svg" alt="LiveHub" width="32" height="32" />
         </div>
         <div className={cn("hidden lg:block", font.className)}>
-          <p className="text-lg font-semibold">Twicher</p>
+          <p className="text-lg font-semibold">Strima</p>
           <p className="text-xs text-muted-foreground">Creator dashboard</p>
         </div>
       </div>

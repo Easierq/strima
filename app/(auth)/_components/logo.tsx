@@ -15,8 +15,8 @@ export const Logo = () => {
         <Image src="/twitch.svg" alt="LiveHub" height="60" width="60" />
       </div>
       <div className={cn("flex flex-col items-center", font.className)}>
-        <p className="text-xl font-semibold">Twicher</p>
-        <p className="text-sm text-muted-foreground">Let&apos;s play</p>
+        {/* <p className="text-2xl font-semibold">Strima</p> */}
+        {/* <p className="text-sm text-muted-foreground">Let&apos;s play</p> */}
       </div>
     </div>
   );
