@@ -113,7 +113,7 @@ export const InfoModal = ({
             ) : (
               <div className="rounded-xl border outline-dashed outline-muted">
                 <UploadDropzone
-                  endpoint="thumbnailUploader"
+                  endpoint={"thumbnailUploader"}
                   appearance={{
                     label: {
                       color: "#FFFFFF",
@@ -122,7 +122,7 @@ export const InfoModal = ({
                       color: "#FFFFFF",
                     },
                   }}
-                  onClientUploadComplete={(res) => {
+                  onClientUploadComplete={(res: any) => {
                     setThumbnailUrl(res?.[0]?.url);
                     router.refresh();
                     closeRef?.current?.click();

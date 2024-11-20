@@ -14,7 +14,9 @@ const nextConfig = {
       },
     ],
   },
-  swcMinify: false,
 };
 
 module.exports = nextConfig;
+// reactStrictMode: true,
+// swcMinify: true,
+// swcMinify: false,

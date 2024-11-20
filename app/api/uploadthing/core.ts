@@ -26,7 +26,6 @@ export const ourFileRouter = {
           thumbnailUrl: file.url,
         },
       });
-
       return { fileUrl: file.url };
     }),
 } satisfies FileRouter;
